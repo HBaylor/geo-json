@@ -1,5 +1,9 @@
+
 import Vue from 'vue'
 
+/**
+ * 全局的金钱格式过滤函数
+ */
 Vue.filter('formatMoney', value => {
   let result = []
   let counter = 0
