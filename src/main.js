@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from './ajax/index'
+import './style/index.less'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/pages/index.vue'
 Vue.use(Router)
+
+const _import = conponent => () => import(`@/pages/${conponent}`)
 
 export default new Router({
   routes: [
     {
-      path: '/login',
+      path: '/',
       name: 'login',
-      component: Login
+      component: _import('index.vue')
     }
   ]
 })
