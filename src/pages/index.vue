@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>login</h2>
-    <el-button>000</el-button>
+    <el-button></el-button>
   </div>
 </template>
 <script>
