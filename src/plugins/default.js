@@ -222,12 +222,12 @@ let Utils = (function () {
     let urlArray = (url || window.location.href).split('#'),
       newUrl = urlArray[1] || urlArray[0],
       params = [],
-      split = (url || window.location.href).indexOf('#') >= 0 ? '#' : '';
+      split = (url || window.location.href).indexOf('#') >= 0 ? '#' : ''
     forEach(data, (value, key) => {
-      newUrl = removeUrlParam(newUrl, key);
-      params.push(`${key}=${value}`);
-    });
-    newUrl = newUrl || urlArray[1] || '';
+      newUrl = removeUrlParam(newUrl, key)
+      params.push(`${key}=${value}`)
+    })
+    newUrl = newUrl || urlArray[1] || ''
     return (
       (urlArray[1] ? urlArray[0] : '') +
       split +
@@ -235,7 +235,7 @@ let Utils = (function () {
       (newUrl.indexOf('?') !== -1 ?
         `&${params.join('&')}` :
         `?${params.join('&')}`)
-    );
+    )
   }
 
   /**
@@ -244,9 +244,9 @@ let Utils = (function () {
    * @param {*} value 要存入的数据
    * @param {Boolean} needCipher 是否加密存储
    */
-  function setSessionItem(key, value, needCipher) {
-    let str = value instanceof Object ? JSON.stringify(value) : value;
-    sessionStorage[key] = str && needCipher ? cipher(str) : str;
+  function setSessionItem (key, value, needCipher) {
+    let str = value instanceof Object ? JSON.stringify(value) : value
+    sessionStorage[key] = str && needCipher ? cipher(str) : str
   }
 
   /**
@@ -255,16 +255,14 @@ let Utils = (function () {
    * @param {Boolean} needDecipher 是否需要解密获取数据
    * @return {*}
    */
-  function getSessionItem(key, needDecipher) {
+  function getSessionItem (key, needDecipher) {
     try {
       return JSON.parse(
-        sessionStorage[key] && needDecipher ?
-          deCipher(sessionStorage[key]) :
-          sessionStorage[key]
-      );
+        sessionStorage[key] && needDecipher ? deCipher(sessionStorage[key]) : sessionStorage[key]
+      )
     } catch (e) {
-      console.warn('SessionStorage.Parse:', '[key:', key, ']', e.message);
-      return sessionStorage[key];
+      console.warn('SessionStorage.Parse:', '[key:', key, ']', e.message)
+      return sessionStorage[key]
     }
   }
 
@@ -272,8 +270,8 @@ let Utils = (function () {
    * 移除Session
    * @param {String} key 键名
    */
-  function removeSessionItem(key) {
-    sessionStorage.removeItem(key);
+  function removeSessionItem (key) {
+    sessionStorage.removeItem(key)
   }
 
   /**
@@ -288,26 +286,26 @@ let Utils = (function () {
   function setLocalItem(key, value, option) {
     try {
       if (typeof option === 'boolean') {
-        option = { needCipher: option };
+        option = { needCipher: option }
       }
-      let localStr;
+      let localStr
       if (option && typeof option.exp === 'number') {
         localStr = JSON.stringify({
           data: value,
           time: Date.now(),
           exp: option.exp
-        });
+        })
       } else {
-        localStr = value instanceof Object ? JSON.stringify(value) : value;
+        localStr = value instanceof Object ? JSON.stringify(value) : value
       }
       localStorage[key] =
-        localStr && option && option.needCipher ? cipher(localStr) : localStr;
-      return true;
+        localStr && option && option.needCipher ? cipher(localStr) : localStr
+      return true
     } catch (e) {
       alert(
         '您的web浏览器不支持本地存储设置。在Safari中，最常见的原因是使用“私人浏览模式”或“无痕浏览”。有些设置可能无法保存或某些功能可能无法正常工作。'
-      );
-      return false;
+      )
+      return false
     }
   }
 
