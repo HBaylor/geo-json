@@ -16,12 +16,12 @@ export default {
   },
   methods: {
     login: function () {
-      this.axios('Login', {
-        username: 'cs',
-        passworld: '1'
-      }).then(res => {
-        console.log(res, '-------------')
-      })
+      // this.axios('Login', {
+      //   username: 'cs',
+      //   passworld: '1'
+      // }).then(res => {
+      //   console.log(res, '-------------')
+      // })
     }
   }
 }
