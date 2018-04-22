@@ -4,9 +4,9 @@
  */
 
 export const route = {
-  path: 'user',
-  component: 'user/info',
+  path: '/',
+  component: 'index.vue',
   meta: {
-    title: '用户信息'
+    title: '测试信息'
   }
 }

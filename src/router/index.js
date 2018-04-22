@@ -1,19 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import {_} from '../plugins/index'
+
 Vue.use(Router)
-
-const _import = conponent => import(`@/pages/${conponent}`)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'login',
-      component: _import('index.vue')
-    }
-  ]
-})
+const _import = component => import(`@/pages/${component}`)
 
 /**
  * 动态扫描路由模块 生成路由
@@ -23,14 +13,18 @@ const modules = (file => {
 })(require.context('./', true, /^\.\/modules\/((?!\/)[\s\S])+\.js$/))
 
 let requireComponent = item => {
-  item.route.component = _import(item.route.component)
-  if (_.isAry(item.route.children) && item.route.children > 0) {
-    requireComponent(item.route.children)
+  item.component = _import(item.component)
+  if (_.isAry(item.children) && item.children > 0) {
+    requireComponent(item.children)
   }
 }
-/**
- * 需要返回结果  *************
- */
-let routes = modules.forEach(item => {
+
+let routData = []
+modules.forEach(item => {
   requireComponent(item.route)
+  routData.push(item.route)
+})
+
+export default new Router({
+  routes: routData
 })
