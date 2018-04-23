@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import {_} from '../plugins/index'
-
+import '../plugins'
 Vue.use(Router)
 
 /**
