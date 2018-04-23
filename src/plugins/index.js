@@ -10,6 +10,6 @@ export const _ = {
    * @returns
    */
   isAry: function (params) {
-    return Object.prototype.toString.call(params) === '[object Array]'
+    return Object.prototype.toString.call(params) === '[object Array]' && params instanceof Array
   }
 }

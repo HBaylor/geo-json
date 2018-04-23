@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2>login</h2>
-    <el-button>这个是测试</el-button>
+    <router-link to="/list/o1">手机</router-link>
+    <router-link to="/list/o2">平板</router-link>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -12,17 +14,10 @@ export default {
     }
   },
   mounted () {
-    this.login()
+    
   },
   methods: {
-    login: function () {
-      // this.axios('Login', {
-      //   username: 'cs',
-      //   passworld: '1'
-      // }).then(res => {
-      //   console.log(res, '-------------')
-      // })
-    }
+
   }
 }
 </script>

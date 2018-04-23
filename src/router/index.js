@@ -3,28 +3,32 @@ import Router from 'vue-router'
 import {_} from '../plugins/index'
 
 Vue.use(Router)
-const _import = component => import(`@/pages/${component}`)
 
 /**
  * 动态扫描路由模块 生成路由
  */
-const modules = (file => {
-  return file.keys().map(key => file(key))
-})(require.context('./', true, /^\.\/modules\/((?!\/)[\s\S])+\.js$/))
+const _import = file => () => import(`@/pages/${file}`)
 
-let requireComponent = item => {
-  item.component = _import(item.component)
-  if (_.isAry(item.children) && item.children > 0) {
-    requireComponent(item.children)
+let requireComponent = route => {
+  route.component = _import(route.component)
+  if (_.isAry(route.children) && route.children.length > 0) {
+    route.children.forEach(child => requireComponent(child))
   }
+  return route
 }
 
-let routData = []
-modules.forEach(item => {
-  requireComponent(item.route)
-  routData.push(item.route)
+const modules = (r => {
+  return r.keys().map(key => requireComponent(r(key).route))
+})(require.context('./', true, /^\.\/modules\/((?!\/)[\s\S])+\.js$/))
+
+modules.unshift({
+  path: '/',
+  component: _import('index.vue'),
+  meta: {
+    title: '测试信息'
+  }
 })
 
 export default new Router({
-  routes: routData
+  routes: modules
 })
