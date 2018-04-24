@@ -13,6 +13,7 @@ export default {
   },
   mounted () {
     this.login()
+    console.log(this.$util.isAry(this.data))
   },
   methods: {
     text () {

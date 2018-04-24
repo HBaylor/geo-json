@@ -35,13 +35,17 @@ Axios.interceptors.response.use(function (response) {
   return Promise.reject(error)
 })
 
-export default function (name, params, type = 'POST') {
-  if (type === 'POST') {
-    return Axios.post(url[name], params)
-  }
-  if (type === 'GET') {
-    return Axios.get(url[name], {
-      params: params
-    })
+export default {
+  install (Vue, options) {
+    Vue.prototype.axios = function (name, params, type = 'POST') {
+      if (type === 'POST') {
+        return Axios.post(url[name], params)
+      }
+      if (type === 'GET') {
+        return Axios.get(url[name], {
+          params: params
+        })
+      }
+    }
   }
 }

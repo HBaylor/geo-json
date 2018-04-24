@@ -4,9 +4,14 @@
  *
  */
 
-let _ = {}
-_.isAry = function (params) {
-  return Object.prototype.toString.call(params) === '[object Array]' && params instanceof Array
+let $util = {
+  isAry (params) {
+    return Object.prototype.toString.call(params) === '[object Array]' && params instanceof Array
+  }
 }
 
-typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = _ : window._ = _
+/** 暴漏给全局 和vue插件 */
+let plugin = function (Vue, options) {
+  Vue.prototype.$util = $util
+}
+export { $util, plugin }

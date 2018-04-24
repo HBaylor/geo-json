@@ -6,12 +6,12 @@ import router from './router'
 import ElementUI from 'element-ui'
 import axios from './server/index'
 import './style/index.less'
-import { _ } from './plugins'
+import { plugin } from './plugins'
 
-window._ = Vue.prototype._ = _
+Vue.use(plugin)
+Vue.use(axios)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
-Vue.prototype.axios = axios
 
 /* eslint-disable no-new */
 new Vue({
