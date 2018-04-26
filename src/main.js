@@ -5,12 +5,14 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from './server/index'
+import Vuex from 'vuex'
 import { plugin } from './plugins'
 import * as filter from '@/plugins/filter'
 import './style/index.less'
 
 Vue.use(plugin)
 Vue.use(axios)
+Vue.use(Vuex)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
