@@ -17,7 +17,7 @@ let requireComponent = route => {
 }
 
 let modules = (r => {
-  return r.keys().map(key => requireComponent(r(key).route))
+  return r.keys().map(key => requireComponent(r(key).default))
 })(require.context('./', true, /^\.\/modules\/((?!\/)[\s\S])+\.js$/))
 
 modules.unshift({

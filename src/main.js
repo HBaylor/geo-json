@@ -5,13 +5,21 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from './server/index'
-import './style/index.less'
 import { plugin } from './plugins'
+import * as filter from '@/plugins/filter'
+import './style/index.less'
 
 Vue.use(plugin)
 Vue.use(axios)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+/**
+ * 加载过滤器到vue全局
+ */
+Object.keys(filter).forEach(key => {
+  Vue.filter(key, filter[key])
+})
 
 /* eslint-disable no-new */
 new Vue({
