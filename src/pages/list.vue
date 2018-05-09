@@ -1,14 +1,14 @@
 <template>
   <div>
     <h2>list</h2>
-    <el-button @click="text">这个是测试</el-button>
+    <el-button @click="text">{{data | formatMoney}}</el-button>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      data: 'vue'
+      data: 100000
     }
   },
   mounted () {

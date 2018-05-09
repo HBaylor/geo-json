@@ -1,9 +1,11 @@
 /**
  *
  * 用户模块路由
+ * component 的值是组件相对于pages的路径
+ *
  */
 
-export const route = {
+export default {
   path: '/list',
   component: 'index.vue',
   meta: {
