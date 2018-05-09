@@ -8,14 +8,6 @@ let $util = {
   isAry (v) {
     return Object.prototype.toString.call(v) === '[object Array]' && v instanceof Array
   },
-<<<<<<< HEAD
-  isTrue (v) {
-    return v === 'undefind' || v === null || v === ''
-  },
-  /** 格式化日期 */
-  formateData (v) {
-
-=======
   /** 判断是否为空 */
   isEmpty (v) {
     return v === '' && v === null && v === undefined && !v
@@ -69,7 +61,6 @@ let $util = {
       }
     }
     return fmt
->>>>>>> 9ebdd5d82283e5e92a95d289a067e885683a9fb2
   }
 
 }
