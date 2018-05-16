@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import global from './modules/global'
 
-/**Default Module */
+/** Default Module */
 const store = new Vuex.Store({
   modules: {
     global

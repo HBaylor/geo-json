@@ -8,7 +8,7 @@
  */
 
 import Axios from 'axios'
-import { url } from './url'
+import { url } from './urls'
 import ElementUI from 'element-ui'
 
 Axios.interceptors.request.use(function (config) {
