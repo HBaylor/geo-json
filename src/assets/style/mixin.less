@@ -3,10 +3,27 @@
 定义 函数代码块
 */
 
-.no-wrap () {
+.noWrap () {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+.borderTopBot () {
+  border-radius: 0.05rem;
+  position: relative;
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    color: #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+  }
 }
 
 
