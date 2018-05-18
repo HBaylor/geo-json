@@ -5,10 +5,10 @@ import App from './App'
 import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
-import axios from './server/index'
-import { plugin } from './plugins'
+import axios from '@/api/axios'
+import { plugin } from '@/plugins'
 import * as filter from '@/plugins/filter'
-import './style/index.less'
+import '@/style/index.less'
 
 Vue.use(plugin)
 Vue.use(axios)

@@ -24,6 +24,7 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
+    'space-before-function-paren': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-proto': 2, //禁止使用__proto__属性
     'no-return-assign': 1, //return 语句中不能有赋值表达式
