@@ -23,4 +23,6 @@ let formatMoney = value => {
   return `${result.join('')}.${fixed}`
 }
 
-export { formatMoney }
+export {
+  formatMoney
+}
