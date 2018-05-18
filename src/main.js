@@ -8,7 +8,7 @@ import ElementUI from 'element-ui'
 import axios from '@/api/axios'
 import { plugin } from '@/plugins'
 import * as filter from '@/plugins/filter'
-import '@/style/index.less'
+import '@/assets/style/index.less'
 
 Vue.use(plugin)
 Vue.use(axios)
