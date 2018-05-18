@@ -2,21 +2,23 @@
 /**
  * 通用的方法
  */
-
 let $util = {
   /** 判断是否为数组 */
   isAry (v) {
     return Object.prototype.toString.call(v) === '[object Array]' && v instanceof Array
   },
+
   /** 判断是否为空 */
   isEmpty (v) {
     return v === '' && v === null && v === undefined && !v
   },
+
   /** 设置session */
   setSession (key, val) {
     let str = val instanceof Object ? JSON.stringify(val) : val
     sessionStorage[key] = str
   },
+
   /** 读取session */
   getSession (key) {
     try {
@@ -26,14 +28,17 @@ let $util = {
       return sessionStorage[key]
     }
   },
+
   /** 移除Session */
   removeSession (key) {
     sessionStorage.removeItem(key)
   },
+
   /** 去除空格 */
   trim (str) {
     return str && !(str instanceof Object) ? String(str).replace(/(^\s+)|(\s+$)/g, '') : str
   },
+
   /** 格式化日期 */
   formatData (fmt) {
     let o = {
@@ -55,8 +60,7 @@ let $util = {
       if (new RegExp('(' + k + ')').test(fmt)) {
         fmt = fmt.replace(
           RegExp.$1,
-          RegExp.$1.length === 1 ?
-            o[k] : ('00' + o[k]).substr(String(o[k]).length)
+          RegExp.$1.length === 1 ? o[k] : ('00' + o[k]).substr(String(o[k]).length)
         )
       }
     }

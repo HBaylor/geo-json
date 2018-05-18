@@ -2,10 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from './server/index'
-import Vuex from 'vuex'
 import { plugin } from './plugins'
 import * as filter from '@/plugins/filter'
 import './style/index.less'
