@@ -66,7 +66,6 @@ let $util = {
     }
     return fmt
   }
-
 }
 
 /** 暴漏给全局 和vue插件 */

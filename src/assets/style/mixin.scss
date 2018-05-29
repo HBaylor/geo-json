@@ -3,13 +3,13 @@
 定义 函数代码块
 */
 
-.noWrap () {
+@mixin noWrap () {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.borderTopBot () {
+@mixin borderTopBot () {
   border-radius: 0.05rem;
   position: relative;
   &::before {
