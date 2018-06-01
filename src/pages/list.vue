@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>list</h2>
+    <input type="file" accept="image/*" capture="camera"> 
     <el-button @click="text">{{data | formatMoney}}</el-button>
   </div>
 </template>
