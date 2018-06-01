@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+import {$utils} from '@/plugins/index'
 export default {
   data () {
     return {
@@ -13,19 +14,19 @@ export default {
   },
   mounted () {
     this.login()
-    console.log(this.$util.isAry(this.data))
+    console.log($utils.isAry(this.data))
   },
   methods: {
     text () {
       this.$router.push('/')
     },
     login: function () {
-      this.axios('Login', {
-        username: 'cs',
-        passworld: '1'
-      }).then(res => {
-        console.log(res, '-------------')
-      })
+      // this.axios('Login', {
+      //   username: 'cs',
+      //   passworld: '1'
+      // }).then(res => {
+      //   console.log(res, '-------------')
+      // })
     }
   }
 }

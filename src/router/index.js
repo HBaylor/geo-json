@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { $util } from '../plugins'
+import { $utils } from '../plugins'
 Vue.use(Router)
 
 /**
@@ -10,7 +10,7 @@ const _import = file => () => import(`@/pages/${file}`)
 
 let requireComponent = route => {
   route.component = _import(route.component)
-  if ($util.isAry(route.children) && route.children.length > 0) {
+  if ($utils.isAry(route.children) && route.children.length > 0) {
     route.children.forEach(child => requireComponent(child))
   }
   return route

@@ -2,7 +2,7 @@
 /**
  * 通用的方法
  */
-let $util = {
+let $utils = {
   /** 判断是否为数组 */
   isAry (v) {
     return Object.prototype.toString.call(v) === '[object Array]' && v instanceof Array
@@ -68,8 +68,4 @@ let $util = {
   }
 }
 
-/** 暴漏给全局 和vue插件 */
-let plugin = function (Vue, options) {
-  Vue.prototype.$util = $util
-}
-export { $util, plugin }
+export { $utils }

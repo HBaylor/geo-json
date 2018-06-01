@@ -6,11 +6,9 @@ import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from '@/api/axios'
-import { plugin } from '@/plugins'
 import * as filter from '@/plugins/filter'
 import '@/assets/style/index.scss'
 
-Vue.use(plugin)
 Vue.use(axios)
 Vue.use(Vuex)
 Vue.use(ElementUI)
