@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/table">table</router-link>
+    test
   </div>
 </template>
 <script>

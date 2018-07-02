@@ -6,25 +6,25 @@
  */
 
 export default {
-  path: '/list',
+  path: '/',
   component: 'index.vue',
   meta: {
     title: '测试信息'
   },
   children: [
     {
-      path: '/list/o1',
+      path: '/list',
       component: 'list.vue',
       meta: {
-        title: '商户列表',
+        title: '列表',
         menu: true
       }
     },
     {
-      path: '/list/o2',
-      component: 'list2.vue',
+      path: '/table',
+      component: 'testTable.vue',
       meta: {
-        title: '商户列表',
+        title: 'table',
         menu: true
       }
     }
