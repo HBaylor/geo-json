@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <router-view></router-view>
+  <div class="test">
+    <div id="signature"></div>
+    <button type="button">输出签名</button>
   </div>
 </template>
 <script>
+
 export default {
   data () {
     return {
@@ -19,5 +21,10 @@ export default {
 </script>
 <style lang="scss">
 
+#signature {
+  height: 300px;
+  width: 300px;
+  background: #f5f5f5;
+}
 
 </style>
